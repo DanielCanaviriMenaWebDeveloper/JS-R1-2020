@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<link rel="icon" href="js.png">
+		<title>Template String</title>
+	</head>
+	<body>
+		<h1>Cadenas de Texto (String) parte 2</h1>
+		
+		<!-- https://developer.mozilla.org/es/ -> Pagina con documentación de tecnologias de desarrollo web. -->
+
+		<script> 
+
+			let nombre = "Daniel";
+
+			let apellido = "Canaviri";
+
+			// Concatenación 
+
+			let saludo = "Hola mi nombre es " + nombre + " " + apellido + ".";
+
+			console.log(saludo);
+
+			// Interpolación de variables: Meter en una cadena de texto el valor dinamicamente de una variable. Para eso se usara una caracteristica llamada Template String. 
+
+			// Template String
+
+			let saludo2 = `Hola mi nombre es ${nombre} ${apellido}.`;
+
+			console.log(saludo2);
+
+			// Forma de codear antes de Template String 
+
+			let ul = "<ul><li>Primavera</li><li>Verano</li><li>Otoño</li><li>Invierno</li></ul>";
+
+			console.log(ul);
+
+			// De esta forma con el uso de Template String se respetara incluso los saltos de linea e identación permitiendo que nuestro código sea mas legible.
+
+			let ul2 = `
+				<ul>
+					<li>Primavera</li>
+					<li>Verano</li>
+					<li>Otoño</li>
+					<li>Invierno</li>
+				</ul>
+			`;
+			
+			console.log(ul2);
+
+
+			// Otra forma de codear antiguamente antes de Template String.
+
+			let ul3 = "<ul>";
+
+					ul3 += "<li>Primavera</li>";
+
+					ul3 += "<li>Verano</li>";
+
+					ul3 += "<li>Otoño</li>";
+
+					ul3 += "<li>Invierno</li>";
+
+			   ul3 += "</ul>";
+
+			console.log(ul3);
+
+		</script>	
+
+	</body>
+
+</html>
+
+
+

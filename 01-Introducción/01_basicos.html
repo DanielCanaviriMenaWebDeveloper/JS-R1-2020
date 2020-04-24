@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+		<meta name="description=" content="Curso de JS 2020">
+		<link rel="icon" href="js.png">
+		<title>
+			Fundamentos de JavaScript
+		</title>
+	</head>
+	<body>
+		<h1>Fundamentos de JavaScript</h1>
+		<script>
+
+			/* 
+				Antes de ECMAScript 6 (2015) las variables tenian lo que se conoce como
+				el scope global y scope funcional pero no contaban con el scope
+				de bloque
+			*/
+
+
+
+			//Variable con scope global
+			var saludo = "Hola Mundo!!!";
+			console.log(saludo);
+
+			//Caracteristica de ECMAScript 6 (2015)
+			//Variable con scope de bloque
+			let saludo2 = "Hola Mundo 2!!!";
+			console.log(saludo2);
+
+			console.log(window);
+			console.log(window.saludo);
+			console.log(window.saludo2);
+
+			// Como se aplica el hoisting(levantamiento) de variables cuando usamos var
+
+			// hoisting ==> volverse una variable de scope global, o se declaraba antes de la definicion de una funcion 
+
+			console.log("***************** var *******************");
+
+			var musica = "Rock";
+			console.log("Variable Música antes del bloque: ", musica);
+			// var musica = "Rap"; (hoisting) <==
+                                          //  <==
+			//Esto es un bloque           //  <==
+			{                             //  <==
+				var musica = "Rap";       //  ==> Al no encontrarse en un scope funcional se aplica el hoisting
+				console.log("Variable Música dentro el bloque: ", musica);
+			}
+
+			console.log("Variable Música fuera del bloque: ", musica);
+
+
+			console.log("***************** let *******************"); //Separación para que se vea en la consola 
+			// Ahora usando let
+
+			let deporte = "Futbol";
+			console.log("Variable Deporte antes del bloque: ", deporte);
+			{
+				let deporte = "Raquet";
+				console.log("Variable Deporte dentro el bloque : ", deporte);
+			}
+			console.log("Variable Deporte fuera del bloque: ", deporte);
+
+			//Desde ECMAScript6 (2015) aparece la palabra reservada const
+
+			const PI = 3.1416;
+			console.log(PI);
+
+			// Las constantes siempre tienen que ser inicializadas o mostrara un error
+			// const BETA;   => Esto es incorrecto
+
+			// Con let pasa lo contario puedo declarar la variable y posteriormente asignarle un valor 
+			let valor1;
+			valor1 = 34;
+			console.log(valor1);
+
+			// Tambien no se puede reasignar el valor de una constante esto en el caso de ser valores PRIMITIVOS
+			// PI = 345;     => Esto es incorrecto
+
+			/*
+				Tipos de datos 
+
+				1. Primitivos: Se accede directamente al valor.
+					* string
+					* number
+					* boolean
+					* null
+					* undefined
+					* NaN
+
+				2. Compuestos: Se accede a la referencia del valor.
+					* object = {}
+					* array = []
+					* function()
+					* class{}
+					* , etc.
+			*/
+
+			// curly brackets {} , su prototipo es un Objeto
+			// corchetes      [] , su prototipo es un Array
+
+			// Objeto: Cojunto de atributos y valores
+ 
+			let objeto = {
+				nombre: "Daniel", 
+				edad: 3
+			};
+
+			// Arreglo: Es una colección de datos
+
+			let colores = [
+				"Rojo", 
+				"Amarillo", 
+				"Verde"
+			];
+
+			console.log(objeto);
+			console.log(colores);
+
+			// Agregamos elementos al objeto y al arreglo
+			objeto.ciudad = "La Paz";
+			colores.push("Azul");
+
+			console.log(objeto);
+			console.log(colores);
+
+			// En el caso de usar la palabra reservada let para la creación de objetos o array si permite redeclarar sus valores.
+
+			// Veamos que pasa si usamos la palabra reservada const
+
+			const objeto2 = {
+				nombre: "Jessica",
+				edad: "25"
+			};
+
+			const colores2 = [
+				"Azul",
+				"Rojo"
+			];
+
+			console.log(objeto2);
+			console.log(colores2);
+
+			// Intentemos reasignar valores a los elementos del objeto o array
+
+			objeto2.ciudad = "Santa Cruz";
+			colores2.push("Verde");
+
+			console.log(objeto2);
+			console.log(colores2);
+			
+		</script>
+	</body>
+</html>

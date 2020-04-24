@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<link rel="icon" href="js.png">
+		<title>Números en JS</title>
+	</head>
+	<body>
+		<h1>Números en JS (Numbers)</h1>
+		
+		<script> 
+			
+			let a = 2;
+
+			let b = new Number(5);
+
+			console.log(a);
+
+			console.log(b);
+
+			console.log(a, b);
+
+			let c = 7.19;
+
+			console.log(c);
+
+			// Metodos 
+
+			// toFixed() --> Indica cuantos decimales debe tener un número.
+
+			console.log( c.toFixed(1) ); // Retorna un valor tipo string
+
+			console.log( c.toFixed(5) ); 
+
+			// parseInt() --> Obtiene la parte entera de un número.
+
+			console.log( parseInt(c) );
+
+			console.log( parseFloat(c) );
+
+			let d = "5.6";
+
+			// typeof() --> Nos indica que tipo de dato almacena una variable.
+
+			console.log( typeof(d), typeof(c), typeof(a) );
+
+			// Operacion Aritmetica +
+
+			// Con dos variables tipo number
+
+			console.log(a+b);  // El resultado es un dato de tipo number
+
+			// Con una variable tipo number y otras tipo string
+
+			console.log(c+d);  // El resultado es un dato de tipo string y se concatenan.
+
+			// Aplicando un casting a la variable d para poder realizar la operación suma.
+
+			console.log( c + parseInt(d) ); // Convierte a una dato tipo number y obtiene su parte entera para sumar con el valor de la variable c.
+
+			console.log( c + parseFloat(d) ); // Convierte a un dato tipo number ademas de obtener su parte entera y decimal para sumar con el valor de la variable c.	
+
+			// Otras sintaxis valida
+
+			console.log( c + Number.parseFloat(d) );
+
+			
+
+		</script>	
+
+	</body>
+
+</html>
+
+
+

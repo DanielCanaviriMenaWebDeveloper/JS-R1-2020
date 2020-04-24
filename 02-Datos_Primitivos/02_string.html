@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<link rel="icon" href="js.png">
+		<title>String</title>
+	</head>
+	<body>
+		<h1>Cadena de Texto (String)</h1>
+		
+		<!-- https://developer.mozilla.org/es/ -> Pagina con documentación de tecnologias de desarrollo web. -->
+
+		<script> 
+
+			let nombre = "Daniel"; // Cadena Primitiva
+
+			let apellido = 'Canaviri';
+
+			let saludo = new String("Hola Mundo"); // Objeto Cadena 
+
+			console.log(nombre);
+
+			console.log(apellido);
+
+			console.log(saludo);
+
+			console.log(nombre, apellido, saludo);
+
+			// Usando la propiedad length
+
+			console.log(
+
+				nombre.length,
+
+				apellido.length,
+
+				saludo.length
+			);
+
+			// Métodos
+
+			console.log(
+
+				nombre.toUpperCase(), //Convierte todos los caracteres de la cadena a Mayusculas
+
+				nombre.toLowerCase(), // Convierte todos los caracteres de la cadena a minusculas
+			);
+
+			let lorem = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam in exercitationem dolores quibusdam nulla ea explicabo expedita reiciendis quas tempore quae, dolorum fugiat sapiente suscipit, delectus! Mollitia rerum saepe perspiciatis.";
+
+			// Verificamos si un caracter o conjunto de caracteres se incluye dentro el String, true = Si se encuentra, false = Si no se encuentra.
+
+			console.log(lorem.includes("dolores"));
+
+			console.log(lorem.includes("dax"));
+
+
+			// Usando metodo trim() --> Quita los espacios en blanco que aparecen al inicio y al final de una cadena.
+
+			let lorem2 = "     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur similique molestias ducimus atque autem quam, hic ad nemo cupiditate repellat distinctio et ex, nisi! Quae esse, aspernatur dolore rem dolor.     ";
+
+			console.log(lorem2);
+
+			console.log("****************************************************************************************************");
+
+			console.log(lorem2.trim());
+
+			console.log("****************************************************************************************************")
+
+			// Metodo para convertir una cadena a un arreglo mediante una regla.
+
+			console.log(lorem.split(" ")); // Almacena en un arreglo una cadena cada que esta separado por un espacio en blanco.
+
+			console.log(lorem.split(",")); // Separando el String por cada coma que encuentre.
+
+		</script>	
+
+	</body>
+</html>
