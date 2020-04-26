@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<link rel="icon" href="../js.png">
+		<title>Arreglos</title>
+	</head>
+	<body>
+		<h1>Arreglos</h1>
+		
+		<script>
+			
+			// Declaración de un arreglo 
+
+			const a = []; // Arreglo vacio
+
+			const b = [1, true, "Hola", ["A", "B", "C", [1, 2, 3], "D"]]; // Colección de Dátos de distinto o igual tipo.
+
+			console.log(a);
+
+			console.log(b);
+
+			// La propiedad length en arreglos me devuelve el número de elementos que tiene dicho arreglo.
+
+			console.log(`La longitud del arreglo es : ${b.length}`);  
+
+			// Acceder a un elemento del arreglo 
+
+			console.log(b[2]); // Muestra por consola el 3er elemento del arreglo de nombre b.
+
+			console.log(b[0]); // Muestra por consola el 1er elemento del arreglo de nombre b.
+
+			console.log(b[3]); // Muestra por consola el 4to elemento del arreglo de nombre b.
+
+			console.log(b[3][1]); // Muestra por consola del 4to elemento que es un arreglo, su segundo elemento, del arreglo de nombre b. Resultado el valor "B".
+
+			console.log(b[3][3][1]); // Accediendo al 4to elemento del arreglo de nombre b, como este cuarto elemento es un arreglo de 5 elementos accedo a su 4 elemento que resulta ser otro arreglo del cual accedo a su 2do elemento. Resultado el valor 2.
+
+
+			// Otra forma de crear un arreglo y llenar elementos caracteristica de ECMAScript 6 (2015).
+
+			const c = Array.of("X", "Y", "Z", 9, 8, 7, ["a", 2, true], false);
+
+			console.log(c);
+
+			// Forma de crear un arreglo de 20 posiciones donde todos los elementos son un valor boolean = true.
+
+			const d = Array(20).fill(true);
+
+			console.log(d);
+
+			// Forma en desuso de crear un arreglo que ya no es recomendado 
+
+			const e = new Array(); // Arreglo vacio.
+
+			const f = new Array(1, 2, 3); // Arreglo de 3 elementos.
+
+			console.log(e);
+
+			console.log(f);
+
+
+			// Metodos en arreglos 
+
+			const colores = ["Rojo", "Verde", "Azul"];
+
+			console.log(colores);
+
+			// Como agregar un nuevo elemento al final del arreglo.
+
+			colores.push("Negro");
+
+			console.log(colores);
+
+			// Como eliminar el ultimo elemento de un arreglo.
+
+			colores.pop();
+
+			console.log(colores);
+
+			// Metodo forEach
+
+			// Metodo que permite ejecutar una función por cada uno de los elementos del arreglo 
+
+			// Ejemplo: Crear una lista de los elementos del arreglo con sintaxis HTML
+
+			colores.forEach(function(valorElemento, indiceElemento) { // Recibe una función como callback
+
+				console.log(`<li id="${indiceElemento}">${valorElemento}</li>`);
+
+			});
+
+			// El primero parametro de la función anonima recibe el valor del elemento y el segundo parametro recibe el valor del indice de ese elemento.
+
+		</script>	
+
+	</body>
+
+</html>
+
+
+
