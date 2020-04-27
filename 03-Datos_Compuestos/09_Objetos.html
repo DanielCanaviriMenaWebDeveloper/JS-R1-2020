@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<link rel="icon" href="../js.png">
+		<title>Objetos</title>
+	</head>
+	<body>
+		<h1>Objetos</h1>
+		
+		<script>
+			
+			let a = new String("Hola");
+
+			console.log(a);
+			
+			// Al declarar el objeto con la palabra reservada const evito que otro objeto ocupe la referencia que en memoria tiene mi objeto.
+
+			const b = {}; // Forma de declarar un objeto vacio.
+
+			console.log(b);
+
+			const c = new Object(); // Otra forma de declarar un objeto vacio, no recomendado.
+
+			console.log(c);
+
+			// Un objeto es una caleccion de elementos de tipo clave-valor.
+
+			// Creando un objeto con elementos de distinto tipo como Strings, Numbers, Arrays, Object, Booleans, Functions.
+
+			const daniel = {
+
+				nombre: "Daniel",
+
+				apellido: "Canaviri",
+
+				edad: 30,
+
+				pasatiempos: ["Programar", "Ver Documentales", "Estudiar"],
+
+				soltero: true,
+
+				contacto: {
+
+					email: "canaviridaniel@gmail.com",
+
+					twitter: "@danielcan",
+
+					movil: 69932743
+				},
+
+				saludar: function() {
+
+					console.log("Hola =)");
+				},
+
+				decirMiNombre: function() {
+
+					console.log(`Hola me llamo ${this.nombre} ${this.apellido} y tengo ${this.edad} años. Me gusta ${this.pasatiempos[1]} gracias.`);
+				}
+
+			};
+
+			console.log(daniel);
+
+			// Forma de acceder a los elementos de un Objeto.
+
+			console.log(daniel["nombre"]);
+
+			console.log(daniel["apellido"]);
+
+			console.log(daniel["edad"]);
+
+			console.log(daniel["pasatiempos"]);
+
+			console.log(daniel["soltero"]);
+
+			console.log(daniel["contacto"]);
+
+			console.log(daniel["saludar"]);
+
+			/*
+				Dentro un objeto a las variables se las conoce como atributos/propiedades,
+				y a las funciones se las conoce como métodos.
+			*/
+
+			// Forma recomendada de acceder a los atributos y métodos de un objeto.
+
+			console.log(daniel.nombre);
+
+			console.log(daniel.apellido);
+
+			console.log(daniel.edad);
+
+			console.log(daniel.pasatiempos);
+
+			console.log(daniel.soltero);
+
+			console.log(daniel.contacto);
+
+			console.log(daniel.saludar);
+
+			console.log(daniel.pasatiempos[1]);
+
+			console.log(daniel.contacto.twitter);
+
+			daniel.saludar();
+
+			daniel.decirMiNombre();
+
+			// Métodos 
+
+			// Metodo que me permite listar todas las llaves de un Objeto en un Array.
+
+			console.log(Object.keys(daniel));
+
+			// Método que me permite listar todos los valores del Objeto en un Array.
+
+			console.log(Object.values(daniel));
+
+			// Me permite saber si existe una x propiedad en el objeto. 
+
+			console.log(daniel.hasOwnProperty("nombre"));  // Salida true
+
+			console.log(daniel.hasOwnProperty("nacimiento")); // Salida false
+
+
+		</script>	
+
+	</body>
+
+</html>
+
+
+
