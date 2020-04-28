@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<link rel="icon" href="../js.png">
+		<title>Operadores</title>
+	</head>
+	<body>
+		<h1>Tipos de Operadores</h1>
+		
+		<script>
+
+			/* 
+
+				Prioridad de los operadores
+
+				() | ^ | *, / | +, - | Mod(Resto), \(Div:Cociente) | =, <>, >, <, >=, <= | (Not) | AND | OR
+			*/
+			
+			let a = 5 + 5 - 10 * 3 / 2;          // Salida -5
+
+			console.log(a);
+
+			let b = 5 + ( 5 - 10 ) * 3 / 2;      // Salida -2.5   --> La prioridad de los operadores afecta el resultado.
+
+			console.log(b);
+			
+			// Modulo : Residuo de una división.
+
+			let modulo = 5 % 2;                  // Salida 1 que es el residuo de dividir 5 entre 2.
+
+			console.log(modulo);
+
+			// Relacionales : >, <, >=, <=, ==, ===, !=, !==
+
+			console.log(8 > 9);
+
+
+		</script>	
+
+	</body>
+
+</html>
+
+
+
