@@ -33,7 +33,149 @@
 
 			// Relacionales : >, <, >=, <=, ==, ===, !=, !==
 
-			console.log(8 > 9);
+			console.log(8 > 9); // false
+
+			console.log(9 > 8); // true
+
+			console.log(8 >= 9); // false
+
+			console.log(9 >= 8); // true
+
+			console.log(7 < 7); // false
+
+			console.log(7 <= 7); // true
+
+			/*
+				 = 1 igual es asignación de valor a una variable. 
+				 ==  Comparación de valores.
+				 === Comparación de tipo de dato y de valor (Recomendado).
+			*/
+
+			console.log(7 == 7); // true   
+
+			console.log("7" == 7); // true  V == V
+
+			console.log("7" == "7"); // true
+
+			console.log(0 == false); // true  F == F
+
+			console.log(7 === 7); // true   
+
+			console.log("7" === 7); // falso  Porque no son del mismo tipo de dato
+
+			console.log("7" === "7"); // true
+
+			console.log(0 === false); // false Porque no son del mismo tipo de dato
+
+			// Incremento o Decremento
+
+			let i = 1;
+
+			console.log(i);
+
+			i = i + 2;   //  i += 2
+
+			console.log(i);
+
+			i += 3;     // i = i + 3;
+
+			console.log(i);
+
+			i -= 1;    // i = i - 1;
+
+			console.log(i);
+
+			i /= 5;   // i = i / 5;
+
+			console.log(i);
+
+			i *= 10;  // i = i * 10;
+
+			console.log(i);
+
+			// Operador Unario
+
+			i++;     // i = i + 1;
+
+			console.log(i);
+
+			i--;    //  i = i - 1;
+
+			console.log(i);
+
+			++i;    //  i = i + 1;    // Solo funciona para este caso.
+
+			console.log(i);
+
+			--i;   //   i = i - 1;    // Solo funciona para este caso.
+
+			console.log(i);
+
+			// Diferencia en usar el i++, ++i, i--, --i;
+
+			let j = 5;
+
+			console.log(j);    // Salida: 5
+
+			console.log(j++);  // Salida: 5, porque j=5 y posteriormente incrementa en 1 el valor de j.
+
+			console.log(j);    // Salida: 6
+
+			console.log(j--);  // Salida: 6, porque j=6 y posteriormente decrementa en 1 el valor de j.
+
+			console.log(j);    // Salida: 5
+
+			console.log(++j);  // Salida: 6, porque incrementa el valor de j en 1 y luego lo muestra.
+
+			console.log(--j);  // Salida: 5, porque decrementa el valor de j en 1 y luego lo muestra.
+
+			// Operadores Lógicos
+
+			/*
+				Not ( ! )
+				Or  ( | )
+				And ( && )
+			*/
+
+			console.log(true);
+
+			console.log(!true);
+
+			console.log(false);
+
+			console.log(!false);
+
+			console.log(("9"==="9") || ("9"===9));  // Solo se nesecita que una condición sea verdadera para que la expresion logistica sea verdadera.
+
+			console.log(("9"===9) || ("9"===9)); // Como ambas son falsas el resultado sera falso.
+
+			console.log(("9"==="9") && ("6"==="6")); // True porque ambas son verdaderas, si uno es falso ya todo es falso.
+
+
+			let num = 2;
+
+			num = Math.pow(num, (3*2));
+
+			console.log(num);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 		</script>	
