@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<link rel="icon" href="../js.png">
+		<title>Manejo de Errores</title>
+	</head>
+	<body>
+		<h1>Manejo de Errores</h1>
+		
+		<script>
+
+			try {
+
+				console.log("El el try se agrega el código al evaluar");
+
+				noExiste; // Este error sera capturado por el catch y se ejecutara el bloque de codigo que se encuentra en su scope.
+
+				console.log("Segundo mensaje en el try");
+
+			} catch(error) { // La variable error es la que captura el mensaje de error.
+
+				console.log("Catch captura cualquier error surgido o lanzado en el try");
+
+				console.log(error);
+
+			} finally {
+
+				console.log("El bloque finally se ejecutara siempre al final de un bloque try-catch");
+
+			}
+
+
+			console.log("*** Errores Personalizados ***");
+
+			// Ejemplo de uso de try-catch con errores personalizados 
+
+			try {
+
+				let numero = "hola";
+
+				if(isNaN(numero)) {  // La funcion Nan(valor) retorna true si el valor no es un número caso contrario false.
+ 
+					throw new Error("El caracter introducido no es un Número.");
+
+				}
+
+				console.log(numero * numero); // Si no captura ningun error en el if, se ejecutara tambien esta sentencia.
+
+			} catch(error) {
+
+				console.log(`Se produjo el siguiente error: ${error}`);
+
+			}
+
+		</script>	
+
+	</body>
+
+</html>
+
+
+
