@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<link rel="icon" href="../js.png">
+		<title>Break y Continue</title>
+	</head>
+	<body>
+		<h1>Break y Continue</h1>
+		
+		<script>
+
+			const numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+
+			for(let i = 0; i < numeros.length; i++){
+
+				console.log(numeros[i]);
+
+			}
+
+			console.log("*** Break ***");
+
+			// Rompiendo el bucle con break 
+
+			for(let i = 0; i < numeros.length; i++){
+
+				if(i === 5){
+
+					break;
+
+				}
+
+				console.log(numeros[i]);
+
+			}
+
+			console.log("*** Continue ***");
+
+			// Rompiendo el bucle una sola iteación con continue.
+
+			for(let i = 0; i < numeros.length; i++){
+
+				if(i === 5){
+
+					continue;
+
+				}
+
+				console.log(numeros[i]);
+
+			}
+
+		</script>	
+
+	</body>
+
+</html>
+
+
+
