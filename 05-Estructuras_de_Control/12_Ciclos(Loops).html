@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<link rel="icon" href="../js.png">
+		<title>Ciclos</title>
+	</head>
+	<body>
+		<h1>Ciclos (Loops).</h1>
+		
+		<script>
+
+			console.log("*** while ***");
+
+			// While : Mientras la condición sea Verdadera se ejecuta el bloque de código, caso contrario no ejecuta nada.
+
+			let contador = 0;
+
+			while(contador < 10){
+
+				console.log(contador);
+
+				contador = contador + 1;
+
+			}
+
+			console.log("*** do-while ***");
+
+			// Do - While : Ejecuta al menos una sentencia al comienzo y luego evalua la condición, si la condición es Verdadera seguimos en el bucle caso contrario no. 
+
+			let contador2 = 0;
+
+			do{
+
+				console.log(contador2);
+
+				contador2 = contador2 + 1;
+
+			}while(contador2 < 10);
+
+			console.log("*** for ***");
+
+			// For : Se usa cuando tengo un rango definido termina cuando la condición no se cumple.
+
+			for(let i = 0; i < 10; i++ ){
+
+				console.log(i);
+			}
+
+			// Ejemplo de uso en el recorrido de un arreglo con un for
+
+			let numeros = [10, 20, 30, 40, 50, 60, 70, 80, 90];
+
+			for(let i = 0; i < numeros.length; i++){
+
+				console.log(numeros[i]);
+
+			}
+
+			// Desde ECMAScript 6 tenemos variantes del for
+
+			console.log("*** For in ***");
+
+			// For in : Nos permite recorrer un objeto y obtener los nombres de sus propiedades y con estas poder acceder a sus valores mediante el objeto.
+
+			const daniel = {
+
+				nombre : "Daniel",
+
+				apellido : "Canaviri",
+
+				edad: 30
+
+			};
+
+
+			console.log(daniel);
+
+			for(const propiedad in daniel){
+
+				console.log(propiedad);
+
+			}
+
+			// Forma incorrecta de acceder a los valores de una propiedad.
+			for(const key in daniel){
+
+				console.log(`Key: ${key}, valor: ${daniel.key}`);
+			}
+
+			// Forma correcta
+
+			for(const key in daniel){
+
+				console.log(`Key: ${key}, valor: ${daniel[key]}`);
+			}
+
+
+			console.log("*** For of ***");
+
+			// For of : Permite recorrer cualquier objeto que sea iterable en JavaScript.
+
+			let nombres = ["Carlos", "Daniel", "Joaquin", "Militza", "Jessica"];
+
+			for(const item of nombres){
+
+				console.log(item)
+
+			}
+
+			let cadena = "JavaScript en 2020";
+
+			for(const caracter of cadena){
+
+				console.log(caracter);
+
+			}
+
+
+			// No esta permitido para el caso de un objeto ya que no es iterable.
+
+			const colores = {
+
+				color1: "Rojo",
+
+				color2: "Amarillo",
+
+				color3: "Verde"
+			};
+
+			for(const key of colores){
+
+				console.log(key);
+
+			}
+
+			// Un objeto iterable es aquel que tiene una estrcutura con valores primitivos.
+			
+
+			
+
+		</script>	
+
+	</body>
+
+</html>
+
+
+
