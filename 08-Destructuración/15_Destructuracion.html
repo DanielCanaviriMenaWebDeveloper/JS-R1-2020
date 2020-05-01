@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<link rel="icon" href="../js.png">
+		<title>Destructuración</title>
+	</head>
+	<body>
+		<h1>Destructuración</h1>
+		
+		<script>
+
+			// Destructuración con Arrays
+
+			// Deseo obtener los valores de un arreglo en distintas variables.
+
+			const numeros = [1, 2, 3];
+
+			console.log("*** Sin Destructuración ***");
+
+			// Sin destructuración antes de ECMAScript 6
+
+			let uno = numeros[0], dos = numeros[1], tres = numeros[2];
+
+			console.log(uno, dos, tres);
+
+			console.log("*** Con Destructuración ***");
+
+			// Con destructuración en ECMAScript 6
+
+			let [one, two, three] = numeros;
+
+			console.log(one, two, three); 
+
+
+			// Destructuración con Objetos
+
+			console.log("*** Destructuración con Objetos ***");
+
+			const daniel = {
+
+				nombre: "Daniel",
+
+				apellido: "Canaviri",
+
+				edad: 33
+
+			};
+
+			let {nombre, apellido, edad} = daniel; // Las variables tienen que tener el mismo nombre que las propiedades del Objeto porque de lo contrario almacenaran valores undefined.
+
+			console.log(nombre, apellido, edad);
+
+			// Tampoco es necesario respetar el orden de las variables de acuerdo al orden en que fueron creadas las propiedades del objeto.
+	
+
+		</script>	
+
+	</body>
+
+</html>
+
+
+
