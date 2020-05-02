@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<link rel="icon" href="../js.png">
+		<title>ParametrosREST & OperatorSpread</title>
+	</head>
+	<body>
+		<h1>Parametros REST y Operator Spread</h1>
+		
+		<script>
+			
+			// PARAMETROS REST
+
+			function sumar(a, b){
+
+				return a + b;
+			}
+
+			console.log(sumar(3, 4));
+
+
+			// ...c  lo toma como un Arreglo
+
+			function sumar2(a, b, ...c){
+
+				let resultado = a + b;
+
+				c.forEach(function(value){ // Recorre los elementos del arreglo de nombre c y va sumando a la variable resultado. 
+
+					resultado += value;    // resultado = resultado + value;
+
+				});
+
+				return resultado;
+			}
+
+			console.log(sumar2(5, 6));
+
+			console.log(sumar2(5, 6, 3));
+
+			console.log(sumar2(5, 6, 3, 2, 5, 7, 2, 8, 2, 1, 0));
+
+
+			// SPREAD OPERATOR
+
+			console.log("*** Arreglo 1 y Arreglo 2");
+
+			const arreglo1 = [1, 2, 3, 4, 5], arreglo2 = [6, 7, 8, 9, 0];
+
+			console.log(arreglo1, arreglo2);
+
+			// Deseo crear un 3er arreglo con los elementos del arreglo 1 y el arreglo 2.
+
+			console.log("*** Arreglo 3, primera alternativa de solución.");
+
+			let arreglo3 = [arreglo1, arreglo2]; // Una alternativa de solución
+
+			console.log(arreglo3);
+
+			// Otra alternativa de solución seria recorrer el arreglo 2 e ir agregando cada uno de sus elementos al arreglo 1, y posteriormente colocar reasignar el arreglo 3 con los elementos del arreglo 1.
+
+			for(let i = 0; i < arreglo2.length; i++){
+
+				arreglo1.push(arreglo2[i]);
+			}
+
+			arreglo3 = arreglo1;
+			
+			// Pero gracias a spread operator tenemos una sintaxis que facilitara esto.
+
+			console.log("*** Arreglo 4, Alternativa optima con spread operator.");
+
+			const arreglo4 = [...arreglo1, ...arreglo2]; // Se juntan los elementos del arreglo 1 y el arreglo 2 en el arreglo 4.
+
+			console.log(arreglo4);
+
+
+
+
+		
+		</script>	
+
+	</body>
+
+</html>
+
+
+
