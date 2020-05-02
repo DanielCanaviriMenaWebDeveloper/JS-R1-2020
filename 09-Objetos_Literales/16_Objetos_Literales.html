@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<link rel="icon" href="../js.png">
+		<title>Objetos Literales</title>
+	</head>
+	<body>
+		<h1>Objetos Literales</h1>
+		
+		<script>
+
+			let nombre = "Daniel",
+
+				  edad = 34;
+
+
+			const persona = {
+
+				nombre: nombre,
+
+				edad: edad,
+
+				saludo: function() {
+
+					console.log("Hola me llamo Daniel.");
+				}
+			};
+
+			console.log(persona);
+
+			persona.saludo();
+
+			/* 
+				Nueva caracteristica de ECMAScript 6
+
+				Otra forma de definir propiedades y métodos en un objeto.
+
+				JavaScript asigna a estas propiedades del objeto persona2, el valor de la variables llamadas nombre y edad ya definidas anteriormente, por el hecho de que tienen el mismo nombre.
+
+			*/
+
+			const persona2 = {
+
+				nombre,          
+
+				edad, 
+
+				profesion: "Ingeníero de Sistemas",
+				
+				// Otra forma mas resumida de definir un método como propiedad de objeto.
+
+				saludo2(){
+
+					console.log(`Hola me llamo ${this.nombre}, tengo ${this.edad} años y mis profesión es: ${this.profesion}.`);
+
+				},
+
+				// Con parametros
+
+				saludo3(nombre, edad, profesion){
+
+					console.log(`Hola me llamo ${nombre}, tengo ${edad} años y mis profesión es: ${profesion}.`);
+
+				},
+
+				// Con parametro por defecto
+				saludo4(nombre = "Sin nombre", edad = 0, profesion = "Sin profesión"){
+
+					console.log(`Hola me llamo ${nombre}, tengo ${edad} años y mis profesión es: ${profesion}.`);
+
+				}
+
+			};
+
+			console.log(persona2);
+
+			persona2.saludo2();
+
+			persona2.saludo3("Carlos", 36, "Capitan de Policia");
+
+			persona2.saludo4();
+
+
+		</script>	
+
+	</body>
+
+</html>
+
+
+
