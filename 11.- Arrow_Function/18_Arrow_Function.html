@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<link rel="icon" href="../js.png">
+		<title>Arrow Function</title>
+	</head>
+	<body>
+		<h1>Arrow Function (Funciones Flecha)</h1>
+		
+		<script>
+			
+			// Nueva forma de definir Funciones Anonimas Expresadas
+
+			const saludar = function(){
+
+				console.log("Hola");
+
+			}; 
+
+			saludar();
+
+			// Ahora con un Arrow Function
+
+			const saludar2 = () => {
+
+				console.log("Hola 2");
+
+			};
+
+			saludar2();
+
+			// Cuando se tiene una sola sentencia en la función se podria omitir las llaves.
+
+			const saludar3 = () => console.log("Hola 3");
+
+			saludar3();
+
+			// Cuando se trabaja con parametros
+
+			const saludar4 = function(nombre){
+
+				console.log(`Hola ${nombre}`);
+
+			};
+
+			saludar4("Daniel");
+
+			// Arrow Function con un parametro
+
+			const saludar5 = nombre => console.log(`Hola ${nombre}`); // En el caso de ser un solo parametro podemos omitir los parentesis.
+
+			saludar5("Joaquin");
+
+			// Ejemplo del uso del return implicito
+
+			const suma = function(a, b){
+
+				return a + b;
+
+			}
+
+			console.log(`La suma es ${suma(4, 6)}`);
+
+			// Con un Arrow Function el return queda definido implicitamente.
+
+			const suma2 = (a, b) => a + b;
+
+			console.log(`La suma es ${suma2(3, 23)}`);
+
+			// Cuando una función tiene mas de una sentencia se mantiene las llaves.
+
+			const suma3 = (a, b, c) => {
+
+				console.log(`Número 1 : ${a}`);
+
+				console.log(`Número 2 : ${b}`);
+
+				console.log(`Número 3 : ${c}`);
+
+			};
+
+			suma3(4, 6, 2);
+			
+			// Recorriendo un arreglo 
+
+			const numeros = [1, 2, 3, 4, 5];
+
+			numeros.forEach(function(elemento, indice){
+
+				console.log(`El elemento ${elemento} esta en la posición: ${indice}`);
+
+			});
+
+			// Recorriendo el mismo array con un Arrow Function
+
+			numeros.forEach((elemento, indice) => console.log(`${elemento} esta en la posición: ${indice}`));
+
+			// Contexto del this en una función
+
+			// En este ejemplo el contexto de this llega a ser el Objeto Windows
+
+			function perro(){
+
+				console.log(this);
+
+			}
+
+			perro();
+
+			// El contexto es el mismo Objeto en este ejemplo
+
+			const gato = {
+
+				nombre: "Pelusa",
+
+				edad: 5,
+
+				aullar() {
+
+					console.log(this);
+				}
+
+			};
+
+		 	gato.aullar();
+
+		 	// En este otro ejemplo al usar un Arrow Function el contexto llega a ser el Objeto Windows
+
+		 	const loro = {
+
+		 		nombre: "Paulie",
+
+		 		edad: 5,
+
+		 		hablar: () => console.log(this) // Se recomienda no hacer uso de esta sintaxis en un Objeto Literal.
+
+		 	}
+
+		 	loro.hablar();
+ 
+		</script>	
+
+	</body>
+
+</html>
+
+
+
