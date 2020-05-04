@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<link rel="icon" href="../js.png">
+		<title>Prototipos</title>
+	</head>
+	<body>
+		<h1>Prototipos</h1>
+		
+		<script>
+
+			// Programación Orientada a Objetos
+
+			/*
+
+				Clases: Modelo a seguir.
+
+				Objetos: Es una instancia de una Clase.
+
+					Atributos: Es una característica o propiedad del Objeto (son variables dentro de un objeto).
+
+					Métodos: Son las acciones que realiza el Objeto (son funciones dentro un objeto). 
+	
+			*/
+
+			const animal = {
+
+				nombre: "Igor",
+
+				ladrar(){ 
+
+					console.log("Uaf uaf ");
+
+				}
+
+			};
+
+			console.log(animal);
+
+			const animal2 = {
+
+				nombre: "Chismosa",
+
+				ladrar(){
+
+					console.log("Uaf Uaf");
+				}
+			};
+
+			console.log(animal2);
+
+			// Función Constructora
+
+			function Persona(nombre, edad){
+
+				// Atributos
+
+				this.nombre = nombre;
+
+				this.edad = edad;
+
+				// Métodos
+
+				this.saludar = function(){
+
+					console.log(`Hola soy la persona de nombre ${this.nombre} y tengo ${this.edad} años de edad.`);
+
+				}
+
+			}
+
+			// Instancio objetos de la Función Constructora
+
+			const persona1 = new Persona("Daniel", 34);
+
+			const persona2 = new Persona("Maria", 62);
+
+			console.log(persona1);
+
+			console.log(persona2);
+
+			persona1.saludar();
+
+			persona2.saludar();
+
+
+			// Lo recomendable en el caso de Funciones Constructoras es sacar los metodos fuera de la funcion y asignarlas al prototipo.
+
+			function Animal(nombre, edad){
+
+				this.nombre = nombre;
+
+				this.edad = edad;
+
+			}
+
+
+			// Sacamos el método y lo asignamos al prototipo 
+
+			Animal.prototype.datosAnimal = function(){
+
+				console.log(`El animal de nombre ${this.nombre} tiene ${this.edad} años de edad.`);			
+
+			}
+
+			const animal1 = new Animal("Firulais", 3);
+
+			const animalito2 = new Animal("Bola de Nieve", 5);
+			
+
+			console.log(animal1); 
+
+			console.log(animalito2);
+
+			animal1.datosAnimal();
+
+			animalito2.datosAnimal();	
+ 	
+		</script>	
+
+	</body>
+
+</html>
+
+
+
