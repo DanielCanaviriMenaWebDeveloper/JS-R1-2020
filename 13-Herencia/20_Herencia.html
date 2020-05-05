@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<link rel="icon" href="../js.png">
+		<title>Herencia</title>
+	</head>
+	<body>
+		<h1>Herencia</h1>
+		
+		<script>
+		
+			function Animal(nombre, genero){
+
+				this.nombre = nombre;
+
+				this.genero = genero;
+
+			}
+
+			Animal.prototype.sonar = function(){
+
+				console.log(`Yo ${this.nombre} de genero ${this.genero} estoy haciendo sonidos =P`);
+
+			}
+
+			Animal.prototype.saludar = function(){
+
+				console.log(`Hola me llamo ${this.nombre}`);
+
+			}
+
+			const snoopy = new Animal("Snoopy", "Macho");
+
+			const lolaBunny = new Animal("Lola Bunny", "Hembra");
+
+			console.log(snoopy);
+
+			console.log(lolaBunny);
+
+			snoopy.sonar();
+
+			snoopy.saludar();
+
+			lolaBunny.sonar();
+
+			lolaBunny.saludar();
+
+			// Herencia Prototípica
+
+			function Perro(nombre, genero, tamanio){
+
+				this.super = Animal; // Variable que me permitira mediante ella mandar a llamar el constructor de la Función Constructora Animal
+
+				this.super(nombre, genero);
+
+				this.tamanio = tamanio;
+
+			}
+
+			// Perro está heredando de Animal 
+
+			Perro.prototype = new Animal;  // Con esta sentencia permito que el Objeto Perro herede los metodos de Animal.
+
+			// Perro.prototype.constructor = Perro; // Con esta sentencia creo un constructor para Perro.
+
+			const firulais = new Perro("Firulais", "Macho", "Mediano");
+
+			console.log(firulais);
+
+			firulais.sonar();
+
+			firulais.saludar();
+
+			// Hasta el momento la Funcion constructora Perro ya puede heredar los métodos de la Funcion Constructora Animal, pero tambien podemos realizar una sobreescritura en estas de la siguiente forma:
+
+			// Sobreescritura de metódos del Prototipo padre en el hijo
+
+			Perro.prototype.sonar = function(){
+
+				console.log("Soy un perro y mi sonido es wuaf wuaf");
+
+			}
+
+			firulais.sonar();
+
+			// Tambien podria crear un metodo propio para el prototipo Perro.
+
+			Perro.prototype.ladrar = function(){
+
+				console.log("Guauuu!!! Guauuuu!!!");
+
+			}
+
+			firulais.ladrar();
+
+		</script>	
+
+	</body>
+
+</html>
+
+
+
