@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<link rel="icon" href="../js.png">
+		<title>Clases</title>
+	</head>
+	<body>
+		<h1>Clases</h1>
+		
+		<script>
+			
+			// Definiendo una Clase
+
+			class Animal { // Las clases no reciben parametros por tanto se omiten los parentesis.
+
+				// El constructor de una Clase es un método especial que se ejecuta en el momento de instanciar un objeto de la Clase.
+
+				constructor(nombre, genero){
+
+					this.nombre = nombre;
+
+					this.genero = genero;
+
+				}
+
+				// Métodos 
+
+				sonar(){ // Los métodos pueden recibir parametros
+
+					console.log(`Soy el animal ${this.nombre} y hago sonidos.`);
+
+				}
+
+				saludar(){
+
+					console.log(`Hola me llamo ${this.nombre} y soy ${this.genero}.`);
+
+				}
+
+			} // Fin Clase Animal
+
+			const animal1 = new Animal("Firulais", "Macho");
+
+			const animal2 = new Animal("Coqueta", "Hembra");
+
+			console.log(animal1);
+
+			console.log(animal2);
+
+			animal1.sonar();
+
+			animal1.saludar();
+
+			animal2.sonar();
+
+			animal2.saludar();
+
+			// Herencia con Clases
+
+			class Perro extends Animal{
+
+				constructor(nombre, genero, tamanio){
+
+					// Con el método super() se manda a llamar el constructor de la Clase Padre Animal
+
+					super(nombre, genero);
+
+					this.tamanio = tamanio;
+				}
+
+				sonar(){
+
+					console.log(`Hola me llamo ${this.nombre} y mi sonido es Uaauuu!!!! Uaaaauuu!!!.`);
+				}
+
+				caracteristicas(){
+
+					console.log(`Nombre: ${this.nombre}, Genero: ${this.genero}, Tamaño: ${this.tamanio}.`);
+
+				}
+
+			}
+
+			const perro1 = new Perro("Rambo", "Macho", "Grande");
+
+			console.log(perro1);
+
+			perro1.sonar(); // Método sobreescrito dentro la clase Perro.
+
+			perro1.saludar(); // Método que heredo de la Clase Padre Animal.
+
+			perro1.caracteristicas(); // Método propio de la Clase Perro.
+		
+		</script>	
+
+	</body>
+
+</html>
+
+
+
