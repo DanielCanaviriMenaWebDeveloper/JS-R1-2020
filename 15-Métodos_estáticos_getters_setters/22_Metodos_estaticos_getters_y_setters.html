@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<link rel="icon" href="../js.png">
+		<title>Métodos Estáticos, Getters y Setters</title>
+	</head>
+	<body>
+		<h1>Métodos Estáticos, Getters y Setters</h1>
+		
+		<script>
+			
+			// Un método estático es aquel que se puede ejecutar sin instanciar un objeto de una Clase.
+
+			class Animal{
+
+				constructor(nombre, genero){
+
+					this.nombre = nombre;
+
+					this.genero = genero;
+				}
+
+				sonar(){
+
+					console.log(`Soy el animal ${this.nombre} y hago sonidos.`);
+				}
+
+				saludar(){
+
+					console.log(`Hola me llamo ${this.nombre} y soy ${this.genero}.`);
+
+				}
+
+				static saludoDeAnimal(nombre, genero){
+
+					console.log(`Hola me llamo ${nombre} este es un saludo desde la Clase Padre Animal y soy ${genero}.`);
+
+				}
+
+			}
+
+
+			class Perro extends Animal{
+
+				constructor(nombre, genero, tamanio){
+
+					super(nombre, genero);
+
+					this.tamanio = tamanio;
+
+					this.raza = null;
+
+				}
+
+				sonar(){
+
+					console.log(`Hola me llamo ${this.nombre} y mi sonido es Uaauuu!!!! Uaaaauuu!!!.`);
+				}
+
+				caracteristicas(){
+
+					console.log(`Nombre: ${this.nombre}, Género: ${this.genero}, Tamaño: ${this.tamanio}.`);
+
+				}
+
+				static queEres(){
+
+					console.log(`Hola soy un perro`);
+
+				}
+
+				get getRaza(){
+
+					return this.raza;
+
+				}
+
+				set setRaza(raza){
+
+					this.raza = raza;
+
+				}
+
+			}
+
+			const animal1 = new Perro("Bandido", "Macho", "Pequeño");
+
+			console.log(animal1);
+
+			animal1.caracteristicas();
+
+			animal1.sonar();
+
+			animal1.saludar();
+
+			// Uso de un Método Estático
+
+			Perro.queEres(); // Se puede acceder a el con el nombre de la Clase
+
+			Perro.saludoDeAnimal("Blanca", "Hembra"); // Método Estático Heredado definido con parametros. 
+
+			// Para hacer uso del metodo get JavaScript lo trata como propiedad.
+
+			console.log(animal1.getRaza); 
+
+			// De la misma forma para el metodo set JavaScript lo trata como propiedad por tanto el valor se lo asigna como si fuera una propiedad y no un método.
+
+			animal1.setRaza = "Caniche";
+
+			console.log(animal1.getRaza); 
+
+
+
+
+			
+		
+		</script>	
+
+	</body>
+
+</html>
+
+
+
