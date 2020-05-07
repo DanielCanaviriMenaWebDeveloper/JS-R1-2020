@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<link rel="icon" href="../js.png">
+		<title>Objeto Console</title>
+	</head>
+	<body>
+		<h1>Objeto Console</h1>
+		
+		<script>
+
+			console.log(console);
+
+			console.error("Esto es un error");
+
+			console.warn("Esto es un aviso");
+
+			console.info("Esto es un mensaje de información");
+
+			console.log("Un registro de lo que a pasado en nuestra aplicación");
+
+			let nombre = "Daniel", apellido = "Canaviri", edad = 36;
+
+			// Puedo mostrar los valores de cada variable de forma independiente.
+
+			console.log(nombre);
+
+			console.log(apellido);
+
+			console.log(edad);
+
+			// O tambien puedo mostrar los valores de las variables en conjunto.
+
+			console.log(nombre, apellido, edad);
+
+			// Mensajes con uso de comodines
+
+			console.log(`Hola mi nombre es ${nombre} ${apellido} y tengo ${edad} años.`);
+
+			// Comodines :  %s para texto, %d para digitos.
+
+			console.log(`Hola mi nombre es %s %s y tengo %d años.`, nombre, apellido, edad);
+
+			// console.clear(); // Limpia la consola
+
+			console.log(window);
+
+			console.log(document); // document : Es la representación del documento HTML a travez de JavaScript pero de forma literal.
+
+			console.dir(document); // Me muestra pero en una representación de Objeto con propiedades y métodos.
+
+			// Nos permite mostrar mensajes en grupo pero ya desplegado.
+
+			console.group("Cursos que actualmente estoy tomando"); // Inicio del grupo.
+
+			console.log("JavaScript");
+
+			console.log("React.js");
+
+			console.log("Flex-Box");
+
+			console.log("Responsive Design");
+
+			console.groupEnd(); // Fin del grupo.
+
+			// Muestra en grupo de mensajes sin desplegar.
+
+			console.groupCollapsed("Cursos que actualmente estoy tomando"); // Inicio del grupo.
+
+			console.log("JavaScript");
+
+			console.log("React.js");
+
+			console.log("Flex-Box");
+
+			console.log("Responsive Design");
+
+			console.groupEnd(); // Fin del grupo.
+
+			console.log(console);
+
+			console.table(console);
+
+			console.table(Object.entries(console).sort()); // Muestra el objeto console en forma de tabla ordenado de forma ascendente.
+
+			const numeros = [1, 2, 3, 4, 5];
+
+			const vocales = ["a", "e", "i", "o", "u"];
+
+			console.table(numeros);
+
+			console.table(vocales);
+
+			const daniel = {
+
+				nombre: "Daniel",
+
+				apellido: "Canaviri",
+
+				edad: 36,
+
+				profesion: "Ingeniero de Sistemas"
+
+			};
+
+			console.table(daniel);
+
+			// Para calcular el tiempo exacto de alguna petición 
+
+			console.time("Cuanto tiempo tarda mi código."); // Rango Inicial 
+
+			const arreglo = Array(100); // Defino un arreglo vacio de 1 millon de posiciones.
+
+			for(let i = 0; i < arreglo.length; i++){
+
+				arreglo[i] = i; // Estoy llenando cada posicion del arreglo con el valor que tiene la variable i en cada interación.
+
+			}
+
+			console.log(arreglo);
+
+			console.timeEnd("Cuanto tiempo tarda mi código."); // Rango final
+
+			// Si deseamos saber la cantidad de veces que se ejecuto una sentencia especifica.
+
+			for(let j=0; j < 10; j++){
+
+				console.count("Iteración: ");
+
+				console.log(`La variable j vale: ${j}.`);
+
+			}
+
+			// Para el caso de pruebas unitarias.
+
+			let x = 6;
+
+			let y = 2;
+
+			let pruebaXY = "Se espera que x siempre sea menor que y";
+
+			console.assert(x < y, {x, y, pruebaXY}); // Se especifica la condiciónm las variables en juego y por ultimo el mensaje.
+
+			/* 
+				Si la condición se cumple no mostrara ningun mensaje caso contrario nos mostrara el siguiente mensaje :
+
+				Assertion failed: {x: 6, y: 2, pruebaXY: "Se espera que x siempre sea menor que y"} 
+			*/
+
+		</script>	
+
+	</body>
+
+</html>
+
+
+
