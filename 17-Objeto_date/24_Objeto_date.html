@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<link rel="icon" href="../js.png">
+		<title>Objeto Date</title>
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	</head>
+	<body>
+		<h1>Objeto Date</h1>
+		
+		<script>
+
+			console.log(Date()); // Muestra por consola la Fecha y Hora del Sistema.
+
+			let fecha = new Date(); // Almaceno Fecha y Hora en una variable para su manipulación.
+
+			console.log(fecha); 
+
+			console.log(fecha.getDate()); // Muestra por consola el dia del mes actual.
+
+			// Dia de la semana: D L M Mi J V S - 0 1 2 3 4 5 6 
+
+			console.log(fecha.getDay()); // Me regresa el dia de la semana actual.
+
+			// Mes del año: Ene Feb Mar Abr May Jun Jul Ago Sep Oct Nov Dic - 0 1 2 3 4 5 6 7 8 9 10 11 
+
+			console.log(fecha.getMonth()); // Mes actual.
+
+			// La hora se representa en el formato de 24 Horas.
+
+			console.log(fecha.getFullYear()); // Año actual.
+
+			console.log(fecha.getHours()); // Hora 
+
+			console.log(fecha.getMinutes()); // Minuto 
+
+			console.log(fecha.getSeconds()); // Segundo 
+
+			console.log(fecha.getMilliseconds()); // Milisegundos
+
+			console.log(fecha.toString()); // La Fecha y Hora en un String: Ej. Thu May 07 2020 18:52:21 GMT-0400 (hora de Bolivia)
+
+			console.log(fecha.toDateString()); // La Fecha en un String: Ej. Thu May 07 2020
+
+			console.log(fecha.toLocaleString()); // La Fecha y Hora con otra sintaxis en un String. Ej. 7/5/2020 18:52:21
+
+			console.log(fecha.toLocaleDateString()); // Solo la Fecha con otras sintaxis en un String. Ej. 7/5/2020
+
+			console.log(fecha.toLocaleTimeString()); // Solo la Hora con otra sintaxis en un String. Ej. 18:57:45
+
+			console.log(fecha.getTimezoneOffset()); //  Muestra la diferencia de tiempo entre la hora universal y la hora local.
+
+			console.log(fecha.getUTCDate()); // Dia de la Hora Universal - Coordinated Universal Time (UTC).
+
+			console.log(Date.now()); // Timestamp es el número de segundos que han transcurrido desde las 0 horas del 1 de enero de 1970 GMT.
+
+			let cumpleDaniel = new Date(1986,2,14); // Obtendra adicionalmente el dia de esa fecha. Ej. Fri Mar 14 1986 00:00:00 GMT-0400 (hora de Bolivia)
+
+			console.log(cumpleDaniel); 
+
+
+
+
+
+
+
+			
+
+
+
+		</script>	
+
+	</body>
+
+</html>
+
+
+
