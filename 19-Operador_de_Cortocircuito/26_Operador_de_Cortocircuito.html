@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<link rel="icon" href="../js.png">
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+		<title>Operador de Cortocircuito</title>
+	</head>
+	<body>
+		<h1>Operador de Cortocircuito</h1>
+
+		<script>
+
+			/*
+				Cortocircuito AND - Cuando el valor de la isquierda en la expresión
+				siempre pueda validad a false, es el valor que se cargará por defecto.
+
+				true  && true  = true     Valor de la derecha
+				true  && false = false    Valor de la derecha
+				false && true  = false    Valor de la isquierda
+				false && false = false    Valor de la isquierda
+
+				Cortocircuito OR - Cuando el valor de la isquierda en la expresión 
+				siempre pueda validar a true, es el valor que se cargará por defecto.
+
+				true  || true  = true     Valor de la isquierda  
+				true  || false = true     Valor de la isquierda
+				false || true  = true     Valor de la derecha
+				false || false = false    Valor de la derecha 
+
+		    */
+
+			// Forma actual en que se usan parametros por defecto.
+
+			function saludar(nombre = "Desconocido"){
+
+				console.log(`Hola ${nombre}.`);
+
+			}
+
+			saludar("Daniel");
+
+			saludar();
+
+			// Forma en que se hacia antes usando un operador cortocircuito.
+
+			function saludar2(nombre){
+
+				nombre = nombre || "Desconocido"; // Operador de cortocircuito
+
+				console.log(`Hola ${nombre}.`);
+
+			}
+
+			saludar2("Joaquin");
+
+			saludar2();
+
+			console.log(true || true);
+
+			console.log(true || false);
+
+			console.log(false || true);
+
+			console.log(false || false);
+
+			console.log(true && true);
+
+			console.log(true && false);
+
+			console.log(false && true);
+
+			console.log(false && false);
+
+			/*
+			
+			***** Valores que tienden a true *****
+
+			"cadena" = true         Una cadena tiende a true
+			    19   = true         Un número tiende a true
+			    true = true         El valor booleano true tiende a true
+				[]   = true         Un arreglo tiende a true
+				{}   = true         Un objeto tiende a true
+			
+			***** Valores que tienden a false *****
+
+			  false  = false        Un valor booleano false tiende a false
+				null = false        El valor null tiende a false
+		   undefined = false        El valor undefined tiende a false
+		   		""   = false        Una cadena vacia tiende a false
+		   		0    = false        El valor 0 tiende a false
+
+			*/
+
+
+			console.log("***** AND *****");                  // Si el valor de la isquierda tiende a true la salida sera el valor de la derecha.
+															 // Si el valor de la isquierda tiende a false la salida sera el valor de la isquierda. 
+
+
+			console.log("Cadena" && "Valor de la derecha");  // Salida: Valor de la derecha, porque el valor de la isquierda tiende a verdadero.
+
+			console.log(19 && "Valor de la derecha");        // Salida: Valor de la derecha, porque el valor de la isquierda tiende a verdadero.
+
+			console.log(true && "Valor de la derecha");      // Salida: Valor de la derecha, porque el valor de la isquierda tiende a verdadero.
+
+			console.log([] && "Valor de la derecha");        // Salida: Valor de la derecha, porque el valor de la isquierda tiende a verdadero.
+
+			console.log({} && "Valor de la derecha");        // Salida: Valor de la derecha, porque el valor de la isquierda tiende a verdadero.
+
+			console.log(false && "Valor de la derecha");     // Salida: false, que es el valor de la isquierda, porque el valor de la isquierda tiende a false.             
+
+			console.log(null && "Valor de la derecha");      // Salida: null, que es el valor de la isquierda, porque el valor de la isquierda tiende a false.
+
+			console.log(undefined && "Valor de la derecha"); // Salida: undefined, que es el valor de la isquierda, porque el valor de la isquierda tiende a false.
+
+			console.log("" && "Valor de la derecha");        // Salida: "", que es el valor de la isquierda, porque el valor de la isquierda tiende a false.
+
+			console.log(0 && "Valor de la derecha");         // Salida: 0, que es el valor de la isquierda, porque el valor de la isquierda tiende a false.
+
+
+			
+			console.log("***** OR *****");                   // Si el valor de la isquierda tiende a true la salida sera el valor de la isquierda.
+															 // Si el valor de la isquierda tiende a false la salida sera el valor de la derecha.
+
+
+			console.log("Cadena" || "Valor de la derecha");  // Salida: Cadena = true, que es el valor de la isquierda, porque el valor de la isquierda tiende a true.
+
+			console.log(19 || "Valor de la derecha");        // Salida: 19 = true, que es el valor de la isquierda, porque el valor de la isquierda tiende a true.
+
+			console.log(true || "Valor de la derecha");      // Salida: true, que es el valor de la isquierda, porque el valor de la isquierda tiende a true.
+
+			console.log([] || "Valor de la derecha");        // Salida: [], que es el valor de la isquierda, porque el valor de la isquierda tiende a true.
+
+			console.log({} || "Valor de la derecha");        // Salida: {}, que es el valor de la isquierda, porque el valor de la isquierda tiende a true.
+
+			console.log(false || "Valor de la derecha");     // Salida: Valor de la derecha, porque el valor de la isquierda tiende a false.
+
+			console.log(null || "Valor de la derecha");      // Salida: Valor de la derecha, porque el valor de la isquierda tiende a false.
+
+			console.log(undefined || "Valor de la derecha"); // Salida: Valor de la derecha, porque el valor de la isquierda tiende a false.
+
+			console.log("" || "Valor de la derecha");        // Salida: Valor de la derecha, porque el valor de la isquierda tiende a false.
+
+			console.log(0 || "Valor de la derecha");         // Salida: Valor de la derecha, porque el valor de la isquierda tiende a false.
+
+			// Otra forma Short-circuit
+
+			// Si el primer valor es un valor verdadero, ese valor es asignado a la variable, caso contrario se asignara el segundo valor. O bien dicho de otra forma si el primero es verdadero se asigna el primero y el segundo jamas sucedera a eso es lo que se llama cortocircuito.
+
+			console.log("***** OR *****");
+
+			let ejemplo1 = false || "Ejemplo1";
+
+			console.log(ejemplo1);   // Salida: Ejemplo1
+
+			let ejemplo2 = "Ejemplo2" || true;
+
+			console.log(ejemplo2);   // Salida: Ejemplo2
+
+			let ejemplo3 = "Ejemplo3" || null;
+
+			console.log(ejemplo3);   // Salida: Ejemplo3
+
+			let ejemplo4 = "Ejemplo4" || "Ejemplo";
+
+			console.log(ejemplo4);   // Salida: Ejemplo4
+
+			let ejemplo5 = false || null;
+
+			console.log(ejemplo5);   // Salida: null
+
+
+			// Si el primer valor es un valor falso, ese valor es asignado a la variable, caso contrario se asignara el segundo valor. O bien dicho de otra forma si el primero es falso se asigna el primero y el segundo jamas sucedera a eso es lo que se llama cortocircuito.
+
+			console.log("***** AND *****");
+
+			let ejemplo_1 = false && "Ejemplo1";
+
+			console.log(ejemplo_1);   // Salida: false
+
+			let ejemplo_2 = "Ejemplo2" && true;
+
+			console.log(ejemplo_2);   // Salida: true
+
+			let ejemplo_3 = "Ejemplo3" && null;
+
+			console.log(ejemplo_3);   // Salida: null
+
+			let ejemplo_4 = "Ejemplo4" && "Ejemplo";
+
+			console.log(ejemplo_4);   // Salida: Ejemplo
+
+			let ejemplo_5 = false && null;
+
+			console.log(ejemplo_5);   // Salida: false
+
+		</script>	
+
+	</body>
+
+</html>
+
+
+
