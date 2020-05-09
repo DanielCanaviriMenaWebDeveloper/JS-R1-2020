@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<link rel="icon" href="../js.png">
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+		<title>Expresiones Regulares</title>
+	</head>
+	<body>
+
+		<h1>Expresiones Regulares</h1>
+
+		<script>
+			
+			/* 
+
+			Expresiones Regulares
+
+			Son una secuencia de caracteres que forman un patron
+			de busqueda, principalmente utilizada para la búsqueda
+			de patrones de cadena de caracteres.
+			
+			Podrian servir para validar correos electronicos, dni, id, etc.
+
+			Documentación:
+
+			https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Regular_Expressions
+
+			https://es.wikipedia.org/wiki/Expresi%C3%B3n_regular
+
+			*/
+
+			let cadena = "asdsa asd asd Lorem ipsum dolor lorem sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse";
+
+			/* 
+
+			Defino la expresión regular con la función constructora.
+
+			Podemos indicar tres parámetros al final de la expresión regular, que modifican ligeramente su comportamiento.
+
+			g: Global (hace coincidir el patrón todas las veces posibles, aunque puede variar según el método).
+
+			i: Insensitive (ignora las mayúsculas y minúsculas).
+
+			m: Multiline (los caracteres ^ y $ pueden coincidir con caracteres multilínea).
+
+			*/
+
+			let expReg = new RegExp("lorem","ig"); 
+
+			// test: Verifica que la expresión regular exista dentro el texto que se encuentra dentro la variable de nombre cadena, retorna tru o false.
+
+			console.log(expReg.test(cadena)); // Salida: true, porque la expresión si se encuentra en la cadena aunque esta comience con Mayuscula ya que se definio el parámetro Insensitive.
+
+			// exec: Procesa la cadena de caracteres en función del patrón proporcionado, devolviendo un array que contiene las partes extraidas
+
+			console.log(expReg.exec(cadena)); // Salida: ["lorem", index:32, input: "cadena", groups: undefined] 
+
+			// Otro formato 
+
+			let expReg2 = /dolor/ig;
+
+			console.log(expReg2.test(cadena));
+
+			console.log(expReg2.exec(cadena));
+
+			let cadena2 = "hola que 34 tal como estas";
+
+			let expReg3 = /\d/;  // Busca si se encuentran números
+
+			let expReg4 = /[0-9]/; // Busca si se encuntra números 
+
+			// Verificamos si se encuentra algun número en la cadena.
+
+			console.log(expReg3.test(cadena2)); // Salida: true
+
+			console.log(expReg3.exec(cadena2)); // Salida: ["3", index: 9, input: "hola que 34 tal como estas", groups: undefined]
+
+			console.log(expReg4.test(cadena2)); // Salida: true
+
+			console.log(expReg4.exec(cadena2)); // Salida: ["3", index: 9, input: "hola que 34 tal como estas", groups: undefined]
+
+
+
+		</script>	
+
+		
+
+	</body>
+
+</html>
+
+
+
