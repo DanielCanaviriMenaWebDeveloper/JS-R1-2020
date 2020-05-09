@@ -94,7 +94,7 @@
 
 
 			console.log("***** AND *****");                  // Si el valor de la isquierda tiende a true la salida sera el valor de la derecha.
-															 // Si el valor de la isquierda tiende a false la salida sera el valor de la isquierda. 
+			                                                 // Si el valor de la isquierda tiende a false la salida sera el valor de la isquierda. 
 
 
 			console.log("Cadena" && "Valor de la derecha");  // Salida: Valor de la derecha, porque el valor de la isquierda tiende a verdadero.
@@ -120,7 +120,7 @@
 
 			
 			console.log("***** OR *****");                   // Si el valor de la isquierda tiende a true la salida sera el valor de la isquierda.
-															 // Si el valor de la isquierda tiende a false la salida sera el valor de la derecha.
+			                                                 // Si el valor de la isquierda tiende a false la salida sera el valor de la derecha.
 
 
 			console.log("Cadena" || "Valor de la derecha");  // Salida: Cadena = true, que es el valor de la isquierda, porque el valor de la isquierda tiende a true.
@@ -143,9 +143,14 @@
 
 			console.log(0 || "Valor de la derecha");         // Salida: Valor de la derecha, porque el valor de la isquierda tiende a false.
 
-			// Otra forma Short-circuit
+			/* 
 
-			// Si el primer valor es un valor verdadero, ese valor es asignado a la variable, caso contrario se asignara el segundo valor. O bien dicho de otra forma si el primero es verdadero se asigna el primero y el segundo jamas sucedera a eso es lo que se llama cortocircuito.
+			Otra forma Short-circuit
+
+			Si el primer valor es un valor verdadero, ese valor es asignado a la variable, caso contrario se asignara el segundo valor. 
+			O bien dicho de otra forma si el primero es verdadero se asigna el primero y el segundo jamas sucedera a eso es lo que se llama cortocircuito.
+
+			*/
 
 			console.log("***** OR *****");
 
@@ -170,7 +175,12 @@
 			console.log(ejemplo5);   // Salida: null
 
 
-			// Si el primer valor es un valor falso, ese valor es asignado a la variable, caso contrario se asignara el segundo valor. O bien dicho de otra forma si el primero es falso se asigna el primero y el segundo jamas sucedera a eso es lo que se llama cortocircuito.
+			/* 
+
+			Si el primer valor es un valor falso, ese valor es asignado a la variable, caso contrario se asignara el segundo valor. 
+			O bien dicho de otra forma si el primero es falso se asigna el primero y el segundo jamas sucedera a eso es lo que se llama cortocircuito.
+
+			*/
 
 			console.log("***** AND *****");
 

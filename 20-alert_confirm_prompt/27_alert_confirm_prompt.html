@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<link rel="icon" href="../js.png">
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+		<title>Alert, Confirm, Prompt</title>
+	</head>
+	<body>
+
+		<h1>Alert, Confirm, Prompt</h1>
+
+		<script>
+
+			console.log(window);
+
+			// Existen 3 métodos del Objeto Windows que nos permite interactuar con el usuario final.
+
+			window.alert("Hola esto es una Alerta");
+
+			window.confirm("Hola esto es una Confirmación");
+
+			window.prompt("Hola esto es un Aviso y le permite al usuario ingresar un valor.");
+
+			// De igual forma funciona si no hacemos uso del objeto window.
+
+			alert("Hola esto es una Alerta");
+
+			confirm("Hola esto es una Confirmación");
+
+			prompt("Hola esto es un Aviso y le permite al usuario ingresar un valor.");
+
+			// Se podria almecenar en variables las opciones que eliga el usuario o valores que ingrese para poder evaluarlas posteriormente.
+
+			let alerta = alert("Hola esto es una Alerta en una variable.");
+
+			let confirmacion = confirm("Hola esto es una Confirmación en una variable.");
+
+			let aviso = prompt("Hola esto es un Aviso en una variable.");
+
+			console.log(alerta);       // Undefined porque no es necesario almacenarlo.
+
+			console.log(confirmacion); // Aceptar: true, Cancelar: false
+
+			console.log(aviso);        // Aceptar y sin valor escrito, la variable esta vacia.
+									   // Aceptar y con valor escrito. la variable almacena el valor.
+									   // Cancelar ya sea con valor escrito o sin el, la variable almacena el valor null.
+
+		</script>	
+
+	</body>
+
+</html>
+
+
+
