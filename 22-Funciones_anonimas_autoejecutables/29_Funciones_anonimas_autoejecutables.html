@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<link rel="icon" href="../js.png">
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+		<title>Funciones Anónimas Autoejecutables</title>
+	</head>
+	<body>
+
+		<h1>Funciones Anónimas Autoejecutables</h1>
+
+		<script>
+			
+			// Utilizado para el Patron de diseño Módulo en JavaScript .
+			
+			// Immediate-Invoked Function Expression
+
+			// https://developer.mozilla.org/es/docs/Glossary/IIFE
+
+			alert("Hola");
+
+			(function(){})();  // Obligatorio el punto y coma al finalizar la IIFE.
+
+			// Estas funciones se autoejecutan sin nesecidad de invocarlas.
+
+			(function(){
+
+				console.log("Mi primera IIFE"); 
+
+			})();
+
+
+			(function(d, w, c){
+
+				c.log("Mi segunda IIFE");
+
+				c.log(d);
+
+				c.log(w);
+
+				c.log(c);
+
+				c.log("Este es un console .log");
+
+			})(document, window, console); // Estos argumentos son recibidos por la Función Anónima como parámetros.
+
+			// Distintas Sintaxis de Funciones Anónimas Autoejecutables.
+
+			// Clásica
+
+			(function(){
+
+				console.log("Version Clasica");
+			})();
+
+			// La Crockford (Java Script The Good Parts)
+
+			(function(){
+
+				console.log("Versión Crockford 1");
+
+			}());
+
+			// La Crockford (Java Script The Good Parts)
+
+			((function(){
+
+				console.log("Versión Crockford 2");
+
+			})());
+
+			// Unaria
+
+			+function(){
+
+				console.log("Versión Unaria");
+			}();
+
+			// Facebook
+
+			!function(){
+
+				console.log("Versión Facebook");
+
+			}();
+
+			// Crazy version
+
+			!1%-+~function(){
+
+				console.log("Versión Crazy");
+
+			}();
+
+			// Articulo Recomendado 
+
+			// https://www.etnassoft.com/2011/03/14/funciones-autoejecutables-en-javascript/
+
+			
+		</script>	
+
+		
+
+	</body>
+
+</html>
+
+
+
