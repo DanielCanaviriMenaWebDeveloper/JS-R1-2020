@@ -15,6 +15,13 @@
 				  edad = 34;
 
 
+			function correr(){
+
+				console.log("Hola estoy corriendo");
+
+			}
+
+
 			const persona = {
 
 				nombre: nombre,
@@ -24,12 +31,19 @@
 				saludo: function() {
 
 					console.log("Hola me llamo Daniel.");
-				}
+				},
+
+				// Tambien se puede asignar valores que son una Función a la propiedad de un objeto.
+
+				correr: correr 
+
 			};
 
 			console.log(persona);
 
 			persona.saludo();
+
+			persona.correr();
 
 			/* 
 				Nueva caracteristica de ECMAScript 6
@@ -69,7 +83,9 @@
 
 					console.log(`Hola me llamo ${nombre}, tengo ${edad} años y mis profesión es: ${profesion}.`);
 
-				}
+				},
+
+				correr // Esta propiedad es una Función.
 
 			};
 
@@ -80,6 +96,8 @@
 			persona2.saludo3("Carlos", 36, "Capitan de Policia");
 
 			persona2.saludo4();
+
+			persona2.correr();
 
 		</script>	
 
