@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Prototipos</title>
+    </head>
+    <body>
+        <script>
+            /*
+                Sintaxis de creación de un prototipo de un objeto usando la función constructor
+            */
+
+            function Persona(nom, ape, edad)
+            {
+                this.nombre = nom;
+                this.apellido = ape;
+                this.edad = edad;
+
+                this.nombreCompleto = function() {
+                    return this.nombre + " " + this.apellido + " " + this.edad;
+                }
+            }
+
+            var persona1 = new Persona("Daniel", "Canaviri", 37);
+
+            var persona2 = new Persona("Carlos", "Mendoza", 45);
+
+            console.log(persona1.nombreCompleto());
+
+            /*  Añadir una propiedad a un objeto */
+            persona1.nacionalidad = "Boliviano";
+            console.log(persona1.nacionalidad); // Solo se añade la propiedad a persona1 pero no a persona2
+
+            console.log(persona2.nacionalidad);
+
+            /* Añadir un método a un objeto */
+            persona1.nacimiento = function() {
+                return "Nacimiento en el año 1983 de " + this.nombre;
+            }
+
+            console.log(persona1.nacimiento());
+
+            console.log(persona2.nacimiento());
+            
+        </script>
+    </body>
+</html>
