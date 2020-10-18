@@ -17,6 +17,7 @@
                 this.apellido = ape;
                 this.edad = edad;
 
+                /* Método añadido dentro el prototipo */
                 this.nombreCompleto = function() {
                     return this.nombre + " " + this.apellido + " " + this.edad;
                 }
@@ -30,7 +31,7 @@
 
             /*  Añadir una propiedad a un objeto */
             persona1.nacionalidad = "Boliviano";
-            console.log(persona1.nacionalidad); // Solo se añade la propiedad a persona1 pero no a persona2
+            console.log(persona1.nacionalidad); // Solo se añade la propiedad al objeto persona1 pero no al objeto persona2
 
             console.log(persona2.nacionalidad);
 
@@ -39,9 +40,25 @@
                 return "Nacimiento en el año 1983 de " + this.nombre;
             }
 
-            console.log(persona1.nacimiento());
+            console.log(persona1.nacimiento()); // Solo se añade el método al objeto persona1 pero no al objeto persona2
 
-            console.log(persona2.nacimiento());
+            // console.log(persona2.nacimiento());
+
+            /*  
+                Añadir una propiedad al prototipo
+                1ra Forma: Añadiendo la propiedad directamente sobre la definición del prototipo
+                2da Forma: Mediante la sintaxis
+                    <nombre_objeto>.prototype.<propiedad>
+            */
+
+            Persona.prototype.muerte = "2000";
+
+            console.log(persona1.nombre + " morira el año " + persona1.muerte);
+            console.log(persona2.nombre + " morira el año " + persona2.muerte);
+            // Reasignando el valor de la propiedad llamada muerte del objeto persona2
+            persona2.muerte = "2017";
+            console.log(persona2.nombre + " ahora morira el año " + persona2.muerte);
+
             
         </script>
     </body>
