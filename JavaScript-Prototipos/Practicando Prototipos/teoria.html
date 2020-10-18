@@ -4,12 +4,19 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Object.prototype</title>
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
+        <h1>Object.prototype</h1>
         <div class="container">
-            <h1>Object.prototype</h1>
             <p>Todo lo que es considerado un objeto en JavaSscript heredan de Object.prototype </p>
+            <section>
+                <h2>Envío dinámico o delegación.</h2>
+                <p>La regla es muy simple: si una propiedad no se encuentra en el objeto mismo, hay un intento de buscarla el el <b>prototipo</b>, si no se encontró entonces se busca en el <b>prototipo del prototipo, etc.</b></p>
+                <p>Hasta que se agoten todas las cadenas de prototipos. Tecnicamente, este mecanismo se conoce como <b>envió dinámico o delegación.</b></p>
+            </section>
+          
         </div>
 
         <script>
@@ -26,6 +33,6 @@
 
             console.log(point.__proto__.__proto__); // Apunta a null
         </script>
-        
+        <script src="teoria.js"></script>
     </body>
 </html>

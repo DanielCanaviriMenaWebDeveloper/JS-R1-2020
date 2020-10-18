@@ -1,7 +1,16 @@
+body {
+    margin: 0;
+    background-color: rgb(192, 201, 201);
+    font-family: 'Lato', sans-serif;
+}
 h1 {
     text-align: center;
 }
 .container {
     max-width: 80%;
-    margin: 0 auto;
+    margin: 10px auto;
+    border-radius: 10px;
+    border: 1px solid blanchedalmond;
+    padding: 50px;
+    background-color: rgb(31, 118, 129);
 }
