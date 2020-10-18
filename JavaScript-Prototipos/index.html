@@ -48,7 +48,7 @@
                 Añadir una propiedad al prototipo
                 1ra Forma: Añadiendo la propiedad directamente sobre la definición del prototipo
                 2da Forma: Mediante la sintaxis
-                    <nombre_objeto>.prototype.<propiedad>
+                    <nombre_objeto>.prototype.<nombre_propiedad>
             */
 
             Persona.prototype.muerte = "2000";
@@ -59,6 +59,26 @@
             persona2.muerte = "2017";
             console.log(persona2.nombre + " ahora morira el año " + persona2.muerte);
 
+            /*  
+                Añadir un método al prototipo
+                1ra Forma: Añadiendo método directamente sobre la definición del prototipo
+                2da Forma: Mediante la sintaxis
+                    <nombre_objeto>.prototype.<nombre_metodo> = function(){ <sentencias> }
+            */
+            
+            Persona.prototype.defuncion = function(){
+                return "La fecha de defunción de " + this.nombre + " es " + this.muerte;
+            }
+
+            console.log(persona1.defuncion());
+            console.log(persona2.defuncion());
+
+            Persona.prototype.datos = function(){
+                return `La persona ${this.nombre} ${this.apellido} tiene ${this.edad} y fallecera el año ${this.muerte}.`;
+            }
+
+            console.log(persona1.datos());
+            console.log(persona2.datos());
             
         </script>
     </body>
