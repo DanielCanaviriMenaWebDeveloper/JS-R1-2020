@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Object.prototype</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="container">
+            <h1>Object.prototype</h1>
+            <p>Todo lo que es considerado un objeto en JavaSscript heredan de Object.prototype </p>
+        </div>
+
+        <script>
+            console.log(Object.prototype);
+
+            var point = {
+                x: 10,
+                y: 20
+            }
+
+            console.log(point);
+
+            console.log(point.__proto__); // Apunta al objeto Object.prototype
+
+            console.log(point.__proto__.__proto__); // Apunta a null
+        </script>
+        
+    </body>
+</html>
