@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="description=" content="Curso de JS 2020">
-		<link rel="icon" href="js.png">
+		<link rel="icon" href="../img/favicon/favicon.png">
 		<title>
 			Fundamentos de JavaScript
 		</title>
@@ -23,46 +23,50 @@
 
 			//Variable con scope global
 			var saludo = "Hola Mundo!!!";
-			console.log(saludo);
+			console.log(saludo); // Expected Output: Hola Mundo!!!  
 
 			//Caracteristica de ECMAScript 6 (2015)
 			//Variable con scope de bloque
 			let saludo2 = "Hola Mundo 2!!!";
-			console.log(saludo2);
+			console.log(saludo2); // Expected Output: Hola Mundo 2!!!
 
-			console.log(window);
-			console.log(window.saludo);
-			console.log(window.saludo2);
+			/* Probando si las variables creadas se encuentran dentro el Objeto Window */
+			console.log(typeof window.confirm);      // Expected Output: function
+			console.log(typeof document);            // Expected Output: Object
+			console.log(typeof window);              // Expected Output: Object
+			console.log(typeof window.saludo);       // Expected Output: string
+			console.log(window.saludo2);             // Expected Output: undefined
+			console.log(typeof window.saludo2);      // Expected Output: undefined
 
-			// Como se aplica el hoisting(levantamiento) de variables cuando usamos var
+			// Como se aplica el hoisting(levantamiento) de variables cuando usamos var o let
 
 			// hoisting ==> volverse una variable de scope global, o se declaraba antes de la definicion de una funcion 
 
-			console.log("***************** var *******************");
+			console.log("********** Como se aplica el Hoisting al usar var **********");
 
 			var musica = "Rock";
-			console.log("Variable Música antes del bloque: ", musica);
+			console.log("Variable Música antes del bloque: ", musica); // Expected Output: Rock
+
 			// var musica = "Rap"; (hoisting) <==
                                           //  <==
 			//Esto es un bloque           //  <==
 			{                             //  <==
 				var musica = "Rap";       //  ==> Al no encontrarse en un scope funcional se aplica el hoisting
-				console.log("Variable Música dentro el bloque: ", musica);
+				console.log("Variable Música dentro el bloque: ", musica); // Expected Output: Rap
 			}
 
-			console.log("Variable Música fuera del bloque: ", musica);
+			console.log("Variable Música fuera del bloque: ", musica); // Expected Output: Rap
 
 
-			console.log("***************** let *******************"); //Separación para que se vea en la consola 
-			// Ahora usando let
-
+			console.log("********** Como se aplica el Hoisting al usar let **********");
+			
 			let deporte = "Futbol";
-			console.log("Variable Deporte antes del bloque: ", deporte);
+			console.log("Variable Deporte antes del bloque: ", deporte); // Expected Outuput: Futbol 
 			{
 				let deporte = "Raquet";
-				console.log("Variable Deporte dentro el bloque : ", deporte);
+				console.log("Variable Deporte dentro el bloque : ", deporte); // Expected Output: Raquet
 			}
-			console.log("Variable Deporte fuera del bloque: ", deporte);
+			console.log("Variable Deporte fuera del bloque: ", deporte); // Expected Output: Futbol
 
 			//Desde ECMAScript6 (2015) aparece la palabra reservada const
 
